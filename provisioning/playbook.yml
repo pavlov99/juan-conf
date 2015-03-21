@@ -5,6 +5,7 @@
     - Stouts.timezone
     - Stouts.python
     - ANXS.postgresql
+    - jdauphant.nginx
   vars:
     timezone_timezone: Etc/UTC
     python_versions: [2.7, 3.4]
@@ -18,8 +19,9 @@
       - name: juan
         db: juan
         priv: "ALL" 
+    nginx_official_repo: True
   tasks:
     - name: Add Julia repository
       apt_repository: repo=ppa:staticfloat/juliareleases update_cache=yes
     - name: Install Julia
-      apt pkg=julia state=present
+      apt: pkg=julia state=present

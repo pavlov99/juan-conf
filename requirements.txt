@@ -3,3 +3,4 @@ Stouts.python
 ANXS.postgresql
 jdauphant.nginx
 Stouts.nodejs
+kun432.build-essential

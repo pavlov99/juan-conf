@@ -3,6 +3,7 @@
 - hosts: all
   roles:
     - Stouts.timezone
+    - kun432.build-essential
     - Stouts.python
     - ANXS.postgresql
     - jdauphant.nginx
@@ -26,3 +27,5 @@
       apt_repository: repo=ppa:staticfloat/juliareleases update_cache=yes
     - name: Install Julia
       apt: pkg=julia state=present
+    - name: Install Postgres client dependencies
+      apt: pkg=libpq-dev state=present

@@ -1,0 +1,25 @@
+# vim:ft=ansible:
+---
+- hosts: all
+  roles:
+    - Stouts.timezone
+    - Stouts.python
+    - ANXS.postgresql
+  vars:
+    timezone_timezone: Etc/UTC
+    python_versions: [2.7, 3.4]
+    postgresql_databases:
+      - name: juan
+    postgresql_users:
+      - name: juan
+        pass: juan
+        encrypted: no   
+    postgresql_user_privileges:
+      - name: juan
+        db: juan
+        priv: "ALL" 
+  tasks:
+    - name: Add Julia repository
+      apt_repository: repo=ppa:staticfloat/juliareleases update_cache=yes
+    - name: Install Julia
+      apt pkg=julia state=present

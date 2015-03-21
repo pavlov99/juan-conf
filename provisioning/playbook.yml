@@ -6,6 +6,7 @@
     - Stouts.python
     - ANXS.postgresql
     - jdauphant.nginx
+    - Stouts.nodejs
   vars:
     timezone_timezone: Etc/UTC
     python_versions: [2.7, 3.4]

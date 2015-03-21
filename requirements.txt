@@ -2,3 +2,4 @@ Stouts.timezone
 Stouts.python
 ANXS.postgresql
 jdauphant.nginx
+Stouts.nodejs

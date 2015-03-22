@@ -1,6 +1,7 @@
 Stouts.timezone
 Stouts.python
 ANXS.postgresql
+ANXS.mysql
 jdauphant.nginx
 Stouts.nodejs
 kun432.build-essential

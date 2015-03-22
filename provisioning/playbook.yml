@@ -6,11 +6,16 @@
     - kun432.build-essential
     - Stouts.python
     - ANXS.postgresql
+    - ANXS.mysql
     - jdauphant.nginx
     - Stouts.nodejs
   vars:
     timezone_timezone: Etc/UTC
     python_versions: [2.7, 3.4]
+    postgresql_listen_addresses: "*"
+    postgresql_pg_hba_custom:
+      - { type: host, database: all, user: all, address: '0.0.0.0/0', method: 'md5', comment: ''}
+      - { type: host, database: all, user: all, address: '::1/0', method: 'md5', comment: ''}
     postgresql_databases:
       - name: juan
     postgresql_users:
@@ -21,6 +26,14 @@
       - name: juan
         db: juan
         priv: "ALL" 
+    mysql_root_password: super-secure-password-of-root
+    mysql_databases:
+      - name: juan
+    mysql_users:
+      - name: juan
+        pass: juan
+        host: "%"
+        priv: "juan.*:ALL"
     nginx_official_repo: True
   tasks:
     - name: Add Julia repository
